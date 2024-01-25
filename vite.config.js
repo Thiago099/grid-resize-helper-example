@@ -5,7 +5,7 @@ import { defineConfig } from "vite"
 
 
 export default defineConfig({
-    base: '/voxel-modeler-2/', 
+    base: '/grid-resize-helper-example//', 
     resolve: {
         alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
