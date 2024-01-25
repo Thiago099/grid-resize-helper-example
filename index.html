@@ -66,15 +66,18 @@
       }
   </style>
   <script type="module">
+
     import { makeGridAreasResizable } from "grid-resize-helper"
+
     let gridElement = document.querySelector('.container');
+
     makeGridAreasResizable(gridElement, [
         { 
             query: ".menu", 
             helpers: [
                 { 
                     position: "x+",
-                    area: 0 
+                    edge: 0 
                 },
             ]
         },
@@ -83,7 +86,7 @@
             helpers: [
                 {
                     position: "x-",
-                    area: 1
+                    edge: 1
                 },
             ]
         },
@@ -92,7 +95,7 @@
             helpers: [
                 {
                     position: "y+",
-                    area: 0
+                    edge: 0
                 },
             ]
         },
@@ -101,11 +104,12 @@
             helpers: [
                 {
                     position: "y-",
-                    area: 1
+                    edge: 1
                 },
             ]
         }
     ])
+    
   </script>
   </body>
 </html>
