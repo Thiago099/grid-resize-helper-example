@@ -48,11 +48,11 @@
               'menu footer right';
           grid-template-columns: 1fr 3fr 1fr;
           grid-template-rows: 50px 4fr 2fr;
-          gap: 10px;
           background-color: #2196F3;
+          gap: 2px;
           height: 100vh;
           width: 100vw;
-          padding: 5px;
+          padding: 2px;
           box-sizing: border-box;
       }
   
@@ -93,7 +93,9 @@
 
     let gridElement = document.querySelector('.container');
 
-    makeGridAreasResizable(gridElement, [
+    makeGridAreasResizable(gridElement, 
+    /* Elements */ 
+    [
         { 
             query: ".menu", 
             helpers: [
@@ -130,7 +132,11 @@
                 },
             ]
         }
-    ])
+    ],
+    /*Config */ {
+        //debugBackgroundColor:"rgba(255,0,0,0.3)", // Make the helpers this color instead of invisible
+        thickness:"15px" // this can either be auto(the size of the gap) or a value, relative values are relative to each section of the grid
+    })
     
   </script>
   </body>
