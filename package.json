@@ -12,6 +12,6 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "grid-resize-helper": "^1.0.10"
+    "grid-resize-helper": "^1.0.12"
   }
 }
