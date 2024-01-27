@@ -35,59 +35,84 @@
       </div>
   </div>
   
-  <style>
-      body {
-          margin: 0;
-      }
-  
-      .container {
-          display: grid;
-          grid-template-areas:
-              'header header header'
-              'menu main right'
-              'menu footer right';
-          grid-template-columns: 1fr 3fr 1fr;
-          grid-template-rows: 50px 4fr 2fr;
-          background-color: #2196F3;
-          gap: 2px;
-          height: 100vh;
-          width: 100vw;
-          padding: 2px;
-          box-sizing: border-box;
-          overflow: hidden;
-      }
-  
-      .container > div {
-          background-color: rgba(255, 255, 255, 0.8);
-          position: relative;
-      }
-  
-      .menu {
-          grid-area: menu;
-      }
-  
-      .main {
-          grid-area: main;
-      }
-  
-      .right {
-          grid-area: right;
-      }
-  
-      .footer {
-          grid-area: footer;
-      }
-  
-      .header {
-          grid-area: header;
-      }
+    <style>
 
-      .fill{
-            inset: 10px;
-            overflow: hidden;
-            position: absolute;
+        :root{
+            --main-color: #2196F3;
         }
-  </style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'menu main right'
+                'menu footer right';
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 50px 4fr 2fr;
+            background-color: var(--main-color);
+            gap: 2px;
+            height: 100vh;
+            width: 100vw;
+            padding: 2px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .menu {
+            grid-area: menu;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .right {
+            grid-area: right;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+    .fill{
+        inset: 10px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .helper:hover, .helper-active{
+        animation: delayed-fade-in 0.5s ease-in-out forwards;
+    }
+
+    .helper-active{
+        background-color: var(--main-color) !important;
+    }
+
+    @keyframes delayed-fade-in {
+        0% {
+            background-color: transparent;
+        }
+        80% {
+            background-color: transparent;
+        }
+        100% {
+            background-color: var(--main-color);
+        }
+    }
+
+    </style>
   <script type="module">
 
     import { makeGridAreasResizable } from "grid-resize-helper"
@@ -134,11 +159,13 @@
             ]
         }
     ],
-    /*Config */ {
+    /*Config */ { // The config parameter is optinal
         //debugBackgroundColor:"rgba(255,0,0,0.3)", // Make the helpers this color instead of invisible
-        thickness:"15px", // this can either be auto(the size of the gap) or a value, relative values are relative to each section of the grid
+        thickness:"8px", // this can either be auto(the size of the gap) or a value, relative values are relative to each section of the grid
         minWidth: 30, // minium width of a section
         minHeight: 30, // minimun height of a section
+        helperClass: "helper",
+        helperActiveClass: "helper-active"
     })
     
   </script>
