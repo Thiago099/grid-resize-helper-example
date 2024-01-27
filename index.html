@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/grid-resize-helper-example//vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/grid-resize-helper-example//assets/index-mTLh136d.js"></script>
+    <script type="module" crossorigin src="/grid-resize-helper-example//assets/index-w2DOV-FY.js"></script>
   </head>
   <body>
     <div class="container">
@@ -36,58 +36,83 @@
       </div>
   </div>
   
-  <style>
-      body {
-          margin: 0;
-      }
-  
-      .container {
-          display: grid;
-          grid-template-areas:
-              'header header header'
-              'menu main right'
-              'menu footer right';
-          grid-template-columns: 1fr 3fr 1fr;
-          grid-template-rows: 50px 4fr 2fr;
-          background-color: #2196F3;
-          gap: 2px;
-          height: 100vh;
-          width: 100vw;
-          padding: 2px;
-          box-sizing: border-box;
-          overflow: hidden;
-      }
-  
-      .container > div {
-          background-color: rgba(255, 255, 255, 0.8);
-          position: relative;
-      }
-  
-      .menu {
-          grid-area: menu;
-      }
-  
-      .main {
-          grid-area: main;
-      }
-  
-      .right {
-          grid-area: right;
-      }
-  
-      .footer {
-          grid-area: footer;
-      }
-  
-      .header {
-          grid-area: header;
-      }
+    <style>
 
-      .fill{
-            inset: 10px;
-            overflow: hidden;
-            position: absolute;
+        :root{
+            --main-color: #2196F3;
         }
-  </style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                'header header header'
+                'menu main right'
+                'menu footer right';
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 50px 4fr 2fr;
+            background-color: var(--main-color);
+            gap: 2px;
+            height: 100vh;
+            width: 100vw;
+            padding: 2px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .menu {
+            grid-area: menu;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .right {
+            grid-area: right;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+    .fill{
+        inset: 10px;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .helper:hover, .helper-active{
+        animation: delayed-fade-in 0.5s ease-in-out forwards;
+    }
+
+    .helper-active{
+        background-color: var(--main-color) !important;
+    }
+
+    @keyframes delayed-fade-in {
+        0% {
+            background-color: transparent;
+        }
+        80% {
+            background-color: transparent;
+        }
+        100% {
+            background-color: var(--main-color);
+        }
+    }
+
+    </style>
   </body>
 </html>
